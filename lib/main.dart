@@ -1,3 +1,4 @@
+import 'package:authorized_api_sample_july/controller/home_screen_controller.dart';
 import 'package:authorized_api_sample_july/controller/login_controller.dart';
 import 'package:authorized_api_sample_july/views/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -5,9 +6,8 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(
-      create: (context) => LoginController(),
-    )
+    ChangeNotifierProvider(create: (context) => LoginController()),
+    ChangeNotifierProvider(create: (context) => HomeScreenController())
   ], child: const MyApp()));
 }
 
