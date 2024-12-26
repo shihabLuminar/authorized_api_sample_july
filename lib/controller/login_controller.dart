@@ -14,10 +14,13 @@ class LoginController with ChangeNotifier {
   }) async {
     final url = Uri.parse("${AppConfig.baseUrl}/login");
     try {
-      final response = await http.post(url, body: {
-        "email": email,
-        "password": pass,
-      });
+      final response = await http.post(
+        url,
+        body: {
+          "email": email,
+          "password": pass,
+        },
+      );
       if (response.statusCode == 200) {
         LoginResModel resModel = loginResModelFromJson(response.body);
         if (resModel.access != null && resModel.access!.isNotEmpty) {
